@@ -1,0 +1,747 @@
+/* root variables - main colors, shadows, border radius, etc */
+:root {
+  --primary: #4a6bff;              /* main blue */
+  --primary-light: #f0f3ff;        /* light blue background */
+  --secondary: #ff6b6b;            /* red-ish secondary color */
+  --accent: #6bceff;               /* accent blue */
+  --text: #333;                   /* main text color */
+  --text-light: #666;             /* lighter text for meta info */
+  --bg: #f5f8ff;                 /* page background */
+  --card: #fff;                  /* card background */
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.08);  /* subtle shadow */
+  --border-radius: 12px;         /* rounded corners */
+}
+
+/* global styles - body and font */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg);
+  margin: 0;
+  padding: 0;
+  color: var(--text);
+}
+
+* {
+  font-family: 'Poppins', sans-serif;
+}
+
+/* typography - headings and header */
+h1, h2, h3 {
+  color: var(--primary);
+  margin: 0.5rem 0;
+  text-align: left;
+}
+
+header {
+  text-align: left;
+  margin-bottom: 2rem;
+  margin-left: 0.5rem;
+}
+
+/* nav bar styles */
+nav {
+  background: var(--primary);
+  padding: 1rem 2rem;
+  display: flex;
+  gap: 1rem;
+  box-shadow: var(--shadow);
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  transition: background 0.2s;
+}
+
+nav a:hover,
+nav a.active {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* main container - center content with padding and bg */
+.container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+/* grid for classes - 3 columns with gap */
+#classes-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* individual class icon style */
+.class-icon {
+  background: var(--primary-light);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: var(--shadow);
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.class-icon:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.class-icon img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+  border-radius: var(--border-radius);
+  margin-bottom: 0.5rem;
+}
+
+/* add class icon - blank with plus sign */
+.add-class-icon {
+  background-color: var(--bg);
+  border: 2px dashed var(--primary);
+  color: var(--primary);
+  min-height: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+  user-select: none;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.add-class-icon:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+}
+
+.add-class-icon .plus-symbol {
+  font-size: 48px;
+  line-height: 1;
+  font-weight: bold;
+}
+
+/* buttons - main style */
+button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  padding: 0.75rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0.5rem 0;
+}
+
+button:hover {
+  background: #3a5bef;
+}
+
+/* inputs and selects - padding, border, radius */
+input, select {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* assignments and daily tasks - cards with colored left border */
+.daily-task, .assignment-card {
+  display: flex;
+  align-items: center;
+  background: var(--card);
+  border-radius: var(--border-radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  box-shadow: var(--shadow);
+  border-left: 4px solid;
+  gap: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.assignment-card.high {
+  border-left-color: var(--secondary);
+}
+
+.assignment-card.medium {
+  border-left-color: var(--accent);
+}
+
+.assignment-card.low {
+  border-left-color: #a0e0a0; /* soft green */
+}
+
+.assignment-card:hover {
+  background-color: var(--primary-light);
+}
+
+/* task content inside assignment cards */
+.task-content {
+  flex-grow: 1;
+  text-align: left;
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.task-title {
+  font-weight: 600;
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+  text-align: left;
+}
+
+.task-meta {
+  font-size: 0.9rem;
+  color: var(--text-light);
+  margin: 0;
+  text-align: left;
+  line-height: 1.2;
+}
+
+/* checkbox styling */
+input[type="checkbox"] {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-right: 1rem;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+/* responsive tweaks for smaller screens */
+@media (max-width: 600px) {
+  .assignment-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+  .assignment-card > .task-content {
+    margin-left: 0;
+  }
+}
+
+/* progress bar styling */
+.progress-bar {
+  height: 8px;
+  background: #e0e0e0;
+  border-radius: 4px;
+  margin: 0.5rem 0;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: var(--primary);
+  width: 0%;
+  transition: width 0.3s;
+}
+
+/* filter buttons container */
+.filter-buttons {
+  display: flex;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+/* auth container - centers login/signup forms */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* auth box - login/signup box style */
+.auth-box {
+  background: var(--card);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  text-align: left;
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-box h1 {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+/* calendar styles */
+#calendar {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+.cal-weekdays, .cal-dates-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.cal-day-header {
+  background-color: var(--primary-light);
+  padding: 8px 5px;
+  font-weight: 600;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.cal-day {
+  border: 1px solid #ddd;
+  min-height: 100px;
+  padding: 5px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.cal-day.empty {
+  background-color: #f8f8f8;
+  border: none;
+}
+
+.cal-assignment {
+  background-color: var(--primary);
+  color: white;
+  margin-top: 5px;
+  padding: 3px 5px;
+  border-radius: 3px;
+  font-size: 0.8rem;
+  overflow-wrap: break-word;
+}
+
+/* subtask list section */
+#subtask-section {
+  margin: 1rem 0;
+}
+
+#subtask-list {
+  list-style: none;
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+#subtask-list li {
+  background: var(--primary-light);
+  margin-bottom: 0.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#subtask-list li button {
+  background: none;
+  border: none;
+  color: var(--secondary);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* responsive layout for smaller screens */
+@media (max-width: 700px) {
+  #classes-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container {
+    padding: 1rem;
+  }
+  .daily-task, .assignment-card {
+    padding: 1rem 1rem 1rem 0.75rem;
+    gap: 1rem;
+  }
+}
+
+/* ===== new styles for class page ===== */
+
+/* class header image container */
+.class-header-image {
+  width: 100%;
+  max-height: 250px;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  margin: 2rem 0 1rem 0;
+}
+
+.class-header-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  display: block;
+  border-radius: var(--border-radius);
+}
+
+/* class title container */
+.class-title-container {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.class-title-container h1 {
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+/* assignment header pill */
+.assignment-header {
+  max-width: 900px;
+  margin: 1.5rem auto 1rem auto;
+  padding: 0.75rem 2rem;
+  background: var(--bg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  font-weight: 700;
+  color: var(--primary);
+  font-size: 1.5rem;
+  text-align: center;
+  user-select: none;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* assignment table container */
+.assignment-table {
+  max-width: 900px;
+  margin: 0 auto 3rem auto;
+  background: var(--card);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow-x: auto;
+}
+
+/* each assignment row - grid layout */
+.assignment-row {
+  display: grid;
+  grid-template-columns: 2fr 1.3fr 1fr;
+  padding: 1rem 1.5rem;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.2s ease-in-out;
+}
+
+/* header row style */
+.assignment-row.header {
+  background: var(--primary-light);
+  font-weight: 600;
+  cursor: default;
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+
+/* hover effect for rows */
+.assignment-row:hover:not(.header) {
+  background: var(--primary-light);
+}
+
+/* responsive tweaks for assignment rows */
+@media (max-width: 600px) {
+  .assignment-row {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+  .assignment-row > span:nth-child(3) {
+    display: none;
+  }
+}
+
+/* modal overlay */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  padding: 1rem;
+}
+
+/* hide modal */
+.modal.hidden {
+  display: none;
+}
+
+/* modal content box */
+.modal-content {
+  background: var(--card);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: var(--shadow);
+  position: relative;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* close button in modal */
+.close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--secondary);
+}
+
+/* modal title styling */
+#modal-title {
+  margin-bottom: 1rem;
+  color: var(--primary);
+}
+
+/* modal subtasks section */
+#modal-subtasks {
+  margin-bottom: 1rem;
+}
+
+#modal-subtasks ul {
+  list-style: disc inside;
+  padding-left: 1rem;
+  color: var(--text);
+}
+
+/* modal notes styling */
+#modal-notes {
+  color: var(--text-light);
+  font-style: italic;
+}
+
+/* class image box used in modal */
+.class-image-box {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+/* utility class to hide elements */
+.hidden {
+  display: none;
+}
+
+/* another modal style variant */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.modal-content {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  position: relative;
+}
+
+/* close button for modal */
+.close-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* subtask list inside modal */
+#subtask-list {
+  list-style-type: disc;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  max-height: 100px;
+  overflow-y: auto;
+}
+
+/* hide the class title initially */
+#class-title {
+  display: none;
+}
+
+/* assignment row priority background colors */
+.priority-high {
+  background-color: #ffcccc;   /* light red for high priority */
+}
+
+.priority-medium {
+  background-color: #fff4cc;   /* light yellow for medium priority */
+}
+
+.priority-low {
+  background-color: #ccffcc;   /* light green for low priority */
+}
+
+/* better contrast for text inside colored rows */
+.assignment-row span {
+  color: #222;
+}
+
+
+/* smaller calendar buttons */
+#calendar button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.25rem 0.5rem;    /* smaller padding */
+  font-size: 0.75rem;         /* smaller font size */
+  cursor: pointer;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 2px 6px rgba(74, 107, 255, 0.4);
+  user-select: none;
+  min-width: 60px;            /* optional: keep a minimum width */
+  text-align: center;
+}
+
+#calendar button:hover,
+#calendar button:focus {
+  background-color: #3a5bef;
+  box-shadow: 0 4px 12px rgba(58, 91, 239, 0.6);
+  outline: none;
+}
+
+#calendar button:active {
+  background-color: #3354cc;
+  box-shadow: 0 2px 6px rgba(33, 44, 99, 0.6);
+}
+
+#calendar button:disabled,
+#calendar button[disabled] {
+  background-color: #a0a0a0;
+  cursor: not-allowed;
+  box-shadow: none;
+  color: #eee;
+}
+
+.month-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 20px 0;
+}
+
+.month-navigation h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.month-navigation button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+  max-width: 80px;
+}
+
+.month-navigation button:hover {
+  background-color: var(--primary-light);
+  color: var(--primary);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.subtasks-section {
+  margin-top: 1rem;
+}
+
+.subtasks-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.subtasks-section li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.subtasks-section li input[type="checkbox"] {
+  margin-right: 10px;
+}
+

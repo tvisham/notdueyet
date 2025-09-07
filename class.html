@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>notdueyet | Class</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="calendar.html">Calendar</a>
+    <a href="#" id="logout">Logout</a>
+  </nav>
+
+  <h1 id="class-title"></h1>
+
+
+  <!-- Assignments Section Header -->
+  <div class="container assignment-header">
+    <h2>📋 Assignments</h2>
+  </div>
+
+  <!-- Sort Buttons -->
+  <div class="container" style="display: flex; gap: 10px; justify-content: flex-end; margin-bottom: 10px;">
+    <button id="sort-priority" class="sort-btn">Sort by Priority</button>
+    <button id="sort-date" class="sort-btn">Sort by Due Date</button>
+  </div>
+
+  <!-- Assignment Table -->
+  <div class="container assignment-table">
+    <div class="assignment-row header">
+      <span>Name</span>
+      <span>Due Date</span>
+      <span>Time (min)</span>
+    </div>
+    <div id="assignments" class="assignment-list"></div>
+
+    <!-- Add Assignment Button -->
+    <button id="add-assignment-btn" style="width: 100%; margin-top: 1rem; padding: 0.75rem; font-size: 1rem; border-radius: 12px; border: none; background: var(--primary); color: white; cursor: pointer; transition: background 0.2s;">
+      + Add Assignment
+    </button>
+  </div>
+
+  <!-- Assignment Modal -->
+  <div id="assignment-modal" class="modal hidden">
+    <div class="modal-content">
+      
+      <h3>Add New Assignment</h3>
+      <form id="assignment-form">
+        <label>
+          Assignment Name:
+          <input type="text" id="assignment-name" required />
+        </label>
+        <label>
+          Due Date:
+          <input type="date" id="due-date" required />
+        </label>
+        <label>
+          Estimated Time (minutes):
+          <input type="number" id="estimated-time" min="1" required />
+        </label>
+        <button type="submit">Add Assignment</button>
+        <button id="close-modal" class="close-btn">&times;</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Assignment Details Modal -->
+<div id="details-modal" class="modal hidden">
+  <div class="modal-content">
+    <button id="close-details-modal" class="close-btn">&times;</button>
+    <h3>Assignment Details</h3>
+
+    <label>
+      Notes:
+      <textarea id="assignment-notes" rows="4" placeholder="Write your notes here..."></textarea>
+    </label>
+
+    <div class="subtasks-section">
+      <h4>Subtasks</h4>
+      <ul id="subtask-list"></ul>
+      <input type="text" id="new-subtask" placeholder="New subtask" />
+      <button id="add-subtask-btn">Add Subtask</button>
+    </div>
+  </div>
+</div>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
