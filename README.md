@@ -1,8 +1,5 @@
 # notdueyet
 A lightweight assignment tracker with class management, subtasks, priorities, and calendar view.
-# notdueyet
-
-A lightweight, browser-first assignment tracker for students. notdueyet helps you organize classes, assignments, subtasks and priorities with a clean calendar view — all saved locally in your browser (no account or server required).
 
 ## Table of contents
 
