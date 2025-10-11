@@ -124,13 +124,6 @@ Contributions are welcome. A simple suggested workflow:
 
 Please include screenshots for UI changes and describe any user-facing behavior.
 
-## License
-
-This repository does not include a license file. If you want others to use or contribute to the project, consider adding a LICENSE (for example MIT). If you'd like, I can add a suggested `LICENSE` file.
-
----
-
-If you'd like, I can also:
 
 - add screenshots or a short demo GIF to this README
 - split CSS/JS into `css/` and `js/` subfolders and update the HTML paths
