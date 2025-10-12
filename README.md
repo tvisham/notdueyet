@@ -1,4 +1,4 @@
-# notdueyet
+# NotDueYet
 A lightweight assignment tracker with class management, subtasks, priorities, and calendar view.
 
 ## Table of contents
@@ -16,7 +16,7 @@ A lightweight assignment tracker with class management, subtasks, priorities, an
 
 ## Overview
 
-notdueyet is a simple, fast, client-side application that helps students track assignments and classes. It's intentionally lightweight and privacy-friendly: all data is stored in the browser's LocalStorage, so nothing leaves the user's device.
+NotDueYet is a simple, fast, client-side application that helps students track assignments and classes. It's intentionally lightweight and privacy-friendly: all data is stored in the browser's LocalStorage, so nothing leaves the user's device.
 
 Use cases:
 - Quickly add classes and assignments during lectures
