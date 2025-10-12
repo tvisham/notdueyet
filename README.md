@@ -34,7 +34,7 @@ Use cases:
 
 ## Why this project matters
 
-Students need approachable tools that minimize friction. notdueyet reduces setup time and privacy concerns by running entirely in the browser. Because it's static HTML/CSS/JS, it is easy to host, fork, and extend.
+Students need approachable tools that minimize friction. NotDueYet reduces setup time and privacy concerns by running entirely in the browser. Because it's static HTML/CSS/JS, it is easy to host, fork, and extend.
 
 ## Tech stack
 
@@ -101,32 +101,6 @@ python -m http.server 8000
 
 Then open http://localhost:8000 in your browser.
 
-## Suggestions & improvements
-
-Ideas that would improve the app and README:
-
-- Add a dedicated assets folder (`/css`, `/js`, `/images`) and update references
-- Add automated tests (unit tests for core logic) and a small test runner
-- Add export/import of data (JSON) to back up LocalStorage
-- Add a small service worker to enable offline installation as a PWA
-- Provide keyboard shortcuts and accessibility improvements (ARIA labels)
-- Include screenshots or an animated GIF in this README to show the UI
-
 ## Contributing
 
-Contributions are welcome. A simple suggested workflow:
-
-1. Fork the repository on GitHub
-2. Create a feature branch: `git checkout -b feat/your-feature`
-3. Make changes and test them locally
-4. Commit and push: `git push origin feat/your-feature`
-5. Open a Pull Request describing your change
-
-Please include screenshots for UI changes and describe any user-facing behavior.
-
-
-- add screenshots or a short demo GIF to this README
-- split CSS/JS into `css/` and `js/` subfolders and update the HTML paths
-- add a simple JSON export/import feature for LocalStorage
-
-Tell me which of the above you'd like me to implement next.
+Contributions are welcome to improve or add features .You can open a pull request or can contact via GitHub for any recommendation or an ask for new feature.
